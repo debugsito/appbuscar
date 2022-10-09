@@ -21,4 +21,14 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Repositories\" />
+    <None Remove="Controllers\" />
+    <None Remove="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
 </Project>

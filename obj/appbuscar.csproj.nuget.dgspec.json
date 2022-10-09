@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/debugsito/Documents/cweb/appbuscar/appbuscar.csproj": {}
+    "/Users/armandoos/Documents/VisualStudioProjects/appbuscar/appbuscar.csproj": {}
   },
   "projects": {
-    "/home/debugsito/Documents/cweb/appbuscar/appbuscar.csproj": {
+    "/Users/armandoos/Documents/VisualStudioProjects/appbuscar/appbuscar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/debugsito/Documents/cweb/appbuscar/appbuscar.csproj",
+        "projectUniqueName": "/Users/armandoos/Documents/VisualStudioProjects/appbuscar/appbuscar.csproj",
         "projectName": "appbuscar",
-        "projectPath": "/home/debugsito/Documents/cweb/appbuscar/appbuscar.csproj",
-        "packagesPath": "/home/debugsito/.nuget/packages/",
-        "outputPath": "/home/debugsito/Documents/cweb/appbuscar/obj/",
+        "projectPath": "/Users/armandoos/Documents/VisualStudioProjects/appbuscar/appbuscar.csproj",
+        "packagesPath": "/Users/armandoos/.nuget/packages/",
+        "outputPath": "/Users/armandoos/Documents/VisualStudioProjects/appbuscar/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/debugsito/.nuget/NuGet/NuGet.Config"
+          "/Users/armandoos/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -73,7 +73,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -85,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.109/sdk/6.0.109/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.400/RuntimeIdentifierGraph.json"
         }
       }
     }
