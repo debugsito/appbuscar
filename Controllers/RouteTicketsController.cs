@@ -25,21 +25,36 @@ namespace appbuscar.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await _repository.GetRouteTickets());
+            var result = await _repository.GetRouteTickets();
+            if (result!=null)
+            {
+                return Ok(result);
+            }
+            else return BadRequest();
         }
 
         // GET: api/route-tickets/5
         [HttpGet("{id}", Name = "Get-Route-Ticket")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await _repository.GetRouteTicket(id));
+            var result = await _repository.GetRouteTicket(id);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            else return BadRequest();
         }
 
         // POST: api/route-tickets
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] RouteTickets routes)
         {
-            return Ok(await _repository.Insert(routes));
+            var result = await _repository.Insert(routes);
+            if (result)
+            {
+                return Ok(result);
+            }
+            else return BadRequest();
         }
 
         // PUT: api/route-tickets/5
@@ -54,7 +69,12 @@ namespace appbuscar.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            return Ok(await _repository.Delete(id));
+            var result = await _repository.Delete(id);
+            if (result)
+            {
+                return Ok(result);
+            }
+            else return BadRequest();
         }
     }
 }

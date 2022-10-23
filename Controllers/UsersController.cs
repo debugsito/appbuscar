@@ -25,21 +25,36 @@ namespace appbuscar.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await _repository.GetUsers());
+            var result = await _repository.GetUsers();
+            if (result!=null)
+            {
+                return Ok(result);
+            }
+            else return BadRequest();
         }
 
         // GET: api/users/5
         [HttpGet("{id}", Name = "Get-User")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await _repository.GetUser(id));
+            var result = await _repository.GetUser(id);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            else return BadRequest();
         }
 
         // POST: api/users
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Users users)
         {
-            return Ok(await _repository.Insert(users));
+            var result = await _repository.Insert(users);
+            if (result)
+            {
+                return Ok(result);
+            }
+            else return BadRequest();
         }
 
         // PUT: api/users/5
@@ -54,7 +69,12 @@ namespace appbuscar.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            return Ok(await _repository.Delete(id));
+            var result = await _repository.Delete(id);
+            if (result)
+            {
+                return Ok(result);
+            }
+            else return BadRequest();
         }
     }
 }

@@ -25,21 +25,35 @@ namespace appbuscar.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await _busesRepository.GetBuses());
+            var buss = await _busesRepository.GetBuses();
+            if(buss!=null)
+            {
+                return Ok(buss);
+            }else return BadRequest();
         }
 
         // GET: api/buses/5
         [HttpGet("{id}", Name = "Get")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await _busesRepository.GetBus(id));
+            var buss = await _busesRepository.GetBus(id);
+            if (buss != null)
+            {
+                return Ok(buss);
+            }
+            else return BadRequest();
         }
 
         // POST: api/buses
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Buses buses)
         {
-            return Ok(await _busesRepository.Insert(buses));
+            var buss = await _busesRepository.Insert(buses);
+            if (buss)
+            {
+                return Ok(buss);
+            }
+            else return BadRequest();
         }
 
         // PUT: api/buses/5
@@ -54,7 +68,12 @@ namespace appbuscar.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            return Ok(await _busesRepository.Delete(id));
+            var buss = await _busesRepository.Delete(id);
+            if (buss)
+            {
+                return Ok(buss);
+            }
+            else return BadRequest();
         }
     }
 }

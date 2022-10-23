@@ -25,21 +25,36 @@ namespace appbuscar.Controllers
         [HttpGet]
         public async Task<IActionResult> GetRoles()
         {
-            return Ok(await _repository.GetRoles());
+            var roles = await _repository.GetRoles();
+            if (roles != null)
+            {
+                return Ok(roles);
+            }
+            else return BadRequest();
         }
 
         // GET: api/roles/5
         [HttpGet("{id}", Name = "Get-Role")]
         public async Task<IActionResult> GetRole(int id)
         {
-            return Ok(await _repository.GetRole(id));
+            var roles = await _repository.GetRole(id);
+            if (roles != null)
+            {
+                return Ok(roles);
+            }
+            else return BadRequest();
         }
 
         // POST: api/roles
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Roles roles)
         {
-            return Ok(await _repository.Insert(roles));
+            var result = await _repository.Insert(roles);
+            if (result)
+            {
+                return Ok(roles);
+            }
+            else return BadRequest();
         }
 
         // PUT: api/roles/5
@@ -54,7 +69,12 @@ namespace appbuscar.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            return Ok(await _repository.Delete(id));
+            var result = await _repository.Delete(id);
+            if (result)
+            {
+                return Ok(result);
+            }
+            else return BadRequest();
         }
     }
 }
